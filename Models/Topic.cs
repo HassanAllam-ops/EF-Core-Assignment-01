@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace EF_Core_Assignment_01.Models
 {
+    #region class Topic
     internal class Topic
     {
         public int Id { get; set; }
         public string Name { get; set; }
     }
+    #endregion
 }
