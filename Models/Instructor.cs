@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EF_Core_Assignment_01.Models
 {
+    #region class Instructor
     internal class Instructor
     {
         public int Id { get; set; }
@@ -16,4 +17,5 @@ namespace EF_Core_Assignment_01.Models
         public int HourRate { get; set; }
         public int DepartmentId { get; set; }
     }
+    #endregion
 }
