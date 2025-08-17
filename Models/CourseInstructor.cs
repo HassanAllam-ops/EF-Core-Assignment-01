@@ -8,7 +8,8 @@ namespace EF_Core_Assignment_01.Models
 {
     internal class CourseInstructor
     {
-        public int InstractorId { get; set; }
+        public int Id { get; set; } // i added id primary key because Migration does not work
+        public int InstractorId { get; set; } 
         public int CourseId { get; set; }
         public int Evaluate { get; set; }
     }

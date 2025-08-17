@@ -8,11 +8,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EF_Core_Assignment_01.Contexts
 {
+    #region ITIDbContext
     internal class ITIDbContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=.;Database=ITI;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=HASSANALLAM\\SQLEXPRESS;Database=ITI05;Trusted_Connection=True; TrustServerCertificate = True");
         }
 
         public DbSet<Course> Courses { get; set; }
@@ -23,4 +24,5 @@ namespace EF_Core_Assignment_01.Contexts
         public DbSet<StudentCourse> StudentCourses { get; set; }
         public DbSet<Topic> Topics { get; set; }    
     }
+    #endregion
 }
