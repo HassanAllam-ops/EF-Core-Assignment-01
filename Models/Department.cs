@@ -13,6 +13,8 @@ namespace EF_Core_Assignment_01.Models
         public string Name { get; set; }
         public int InstructorId { get; set; }
         public DateTime HiringDate { get; set; }
+        public List<Student> Students { get; set; }
+        public Instructor Manage { get; set; }
     }
     #endregion
 }
