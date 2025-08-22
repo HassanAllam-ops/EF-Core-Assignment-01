@@ -14,7 +14,7 @@ namespace EF_Core_Assignment_01.Models
         public int CourseId { get; set; }
         public int Grade { get; set; }
         public int TakesId { get; set; }
-        public List<Student> Have { get; set; }
+        public Student Have { get; set; }
     }
     #endregion
 }

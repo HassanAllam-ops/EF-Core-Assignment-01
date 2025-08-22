@@ -14,7 +14,7 @@ namespace EF_Core_Assignment_01.Models
         public string Name { get; set; }
         public string? Description { get; set; }
         public int TopId { get; set; }
-        public List<StudentCourse> studentCourses { get; set; }
+        public StudentCourse? studentCourses { get; set; }
     }
     #endregion
 

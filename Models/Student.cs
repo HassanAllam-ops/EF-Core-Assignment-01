@@ -15,7 +15,9 @@ namespace EF_Core_Assignment_01.Models
         public string? Address { get; set; }
         public int Age { get; set; }
         public int DepartmentId { get; set; }
-        public List<StudentCourse> Takes { get; set; }
+        //public Department Department { get; set; }
+        //public StudentCourse Takes { get; set; }
     }
+
     #endregion
 }
