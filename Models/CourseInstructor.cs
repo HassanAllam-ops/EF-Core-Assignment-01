@@ -13,8 +13,8 @@ namespace EF_Core_Assignment_01.Models
         public int InstractorId { get; set; }
         public int CourseId { get; set; }
         public int Evaluate { get; set; }
-        public List<Course> HaveCourses { get; set; }
-        public List<Instructor> HaveInstructors { get; set; }
+        public Course HaveCourses { get; set; }
+        public Instructor HaveInstructors { get; set; }
     }
     #endregion
 }
