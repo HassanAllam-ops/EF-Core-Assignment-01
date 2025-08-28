@@ -4,6 +4,7 @@ using EF_Core_Assignment_01.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF_Core_Assignment_01.Migrations
 {
     [DbContext(typeof(ITIDbContext))]
-    partial class ITIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250827233734_MappingAllRelationshipsAfterUpdate")]
+    partial class MappingAllRelationshipsAfterUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,7 +87,7 @@ namespace EF_Core_Assignment_01.Migrations
                     b.Property<DateTime>("HiringDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("InstructorId")
+                    b.Property<int>("InstructorId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -94,8 +97,7 @@ namespace EF_Core_Assignment_01.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("InstructorId")
-                        .IsUnique()
-                        .HasFilter("[InstructorId] IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("Departments");
                 });
@@ -148,7 +150,7 @@ namespace EF_Core_Assignment_01.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DepartmentId")
+                    b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
                     b.Property<string>("Fname")
@@ -237,7 +239,8 @@ namespace EF_Core_Assignment_01.Migrations
                     b.HasOne("EF_Core_Assignment_01.Models.Instructor", "Manger")
                         .WithOne("ManagedDepartment")
                         .HasForeignKey("EF_Core_Assignment_01.Models.Department", "InstructorId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Manger");
                 });
@@ -257,7 +260,9 @@ namespace EF_Core_Assignment_01.Migrations
                 {
                     b.HasOne("EF_Core_Assignment_01.Models.Department", "Department")
                         .WithMany("Students")
-                        .HasForeignKey("DepartmentId");
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Department");
                 });

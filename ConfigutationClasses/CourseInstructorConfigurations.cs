@@ -17,13 +17,6 @@ namespace EF_Core_Assignment_01.ConfigutationClasses
             builder.Property(ci => ci.Evaluate)
                 .IsRequired()
                 .HasDefaultValue(0);
-            builder.HasOne(ci => ci.HaveCourses);
-            builder.HasOne(ci => ci.HaveInstructors)
-                .WithMany()
-                .HasForeignKey(ci => ci.InstractorId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-
         }
     }
 }

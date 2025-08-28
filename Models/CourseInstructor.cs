@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace EF_Core_Assignment_01.Models
 {
     #region Class CourseInstructor
-    internal class CourseInstructor
+    public class CourseInstructor
     {
         
         public int InstractorId { get; set; }
         public int CourseId { get; set; }
         public int Evaluate { get; set; }
-        public Course HaveCourses { get; set; }
-        public Instructor HaveInstructors { get; set; }
+        public virtual Course Courses { get; set; }
+        public virtual Instructor Instructors { get; set; }
     }
     #endregion
 }
