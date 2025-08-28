@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace EF_Core_Assignment_01.Models
 {
     #region class Topic
-    internal class Topic
+    public class Topic
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Course> Courses { get; set; }
+        public virtual ICollection<Course> Courses { get; set; } = new HashSet<Course>();
     }
     #endregion
 }

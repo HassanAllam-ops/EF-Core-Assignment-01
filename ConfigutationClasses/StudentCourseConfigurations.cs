@@ -17,7 +17,6 @@ namespace EF_Core_Assignment_01.ConfigutationClasses
             builder.Property(sc => sc.Grade)
                 .IsRequired()
                 .HasDefaultValue(0);
-            builder.HasOne(sc => sc.Have);
         }
     }
 }
